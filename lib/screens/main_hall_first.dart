@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 // The Main Hall first floor screen.
-// Note. Images, text styles and other widgets are in a test state. Will change before release.
-// Need to add a Textbuttons to enter rooms.
+// TODO: Create buttons to enter doors. 6 doors and a staircase.
+// TODO: Create items to interact with?
+// TODO: Find and change the background picture.
 
 class MainHallFirstFloor extends StatelessWidget {
   @override
