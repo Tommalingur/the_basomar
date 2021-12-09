@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Menu(),
         '/garden': (context) => Garden(),
+        '/mainfirst': (context) => MainHallFirstFloor(),
       },
     );
   }

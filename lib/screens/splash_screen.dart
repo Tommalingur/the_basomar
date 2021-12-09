@@ -12,24 +12,44 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Image(image: AssetImage('images/yellow_eyes.png')),
-            Text(
-              'THE BESOMAR',
-              style: TextStyle(
-                fontFamily: 'RockSalt',
-                color: Colors.white,
-                fontSize: 40.0,
-              ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/bones.jpg'),
+            fit: BoxFit.fill,
+          ),
+        ),
+        constraints: BoxConstraints.expand(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 70.0, horizontal: 20.0),
+          child: Container(
+            color: Colors.black,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Image(
+                  image: AssetImage('images/yellow_eyes.png'),
+                ),
+                Text(
+                  'THE BESOMAR',
+                  style: TextStyle(
+                    fontFamily: 'RockSalt',
+                    color: Colors.white,
+                    fontSize: 35.0,
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () => Navigator.pushNamed(context, '/garden'),
+                  child: Text('Click here to start'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.black,
+                    textStyle:
+                        TextStyle(fontSize: 20.0, fontFamily: 'RockSalt'),
+                  ),
+                ),
+              ],
             ),
-            ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, '/garden'),
-              child: Text('Click here to start'),
-            ),
-          ],
+          ),
         ),
       ),
     );

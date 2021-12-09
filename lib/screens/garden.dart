@@ -18,19 +18,38 @@ class Garden extends StatelessWidget {
           ),
         ),
         constraints: BoxConstraints.expand(),
-        child: Container(
-          padding: EdgeInsets.all(10.0),
-          margin: EdgeInsets.fromLTRB(10.0, 700.0, 150.0, 40.0),
-          color: Colors.white,
-          child: Center(
-            child: Text(
-              'Here there will be a story text.',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20.0,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Container(
+              child: Text(
+                'Here there will be a story text.',
+                style: TextStyle(
+                  fontFamily: 'RockSalt',
+                  backgroundColor: Colors.grey,
+                  color: Colors.black,
+                  fontSize: 20.0,
+                ),
               ),
             ),
-          ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.black,
+                ),
+                onPressed: () => Navigator.pushNamed(context, '/mainfirst'),
+                child: Text(
+                  'Enter front door.',
+                  style: TextStyle(
+                    fontFamily: 'RockSalt',
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
