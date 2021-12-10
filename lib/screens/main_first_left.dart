@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-// The Main Hall first floor screen.
-// TODO: Create buttons to go to the right side of the Main Hall.
-// TODO: Create items to interact with?
-// TODO: Find and change the background picture.
+// The left side of The Main Hall first floor.
 
-// Changed the background picture. Probably not a final version.
-// Added a button to navigate to the left side of the Main Hall.
+// TODO: Create navigation buttons to go through second door on western wall and the door on the northern wall.
+// TODO: Maybe create some things to interact with.
 
-class MainHallFirstFloor extends StatelessWidget {
+// The MainHallFirstLeft room created.
+// Added picture to the room.
+// Added a button to return to the stairs.
+// Added a button to enter the first door on the western wall.
+
+class MainHallFirstLeft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +18,7 @@ class MainHallFirstFloor extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_hall_stairs.jpg'),
+            image: AssetImage('images/main_first_left.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -41,9 +43,9 @@ class MainHallFirstFloor extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainsecond'),
+                onPressed: () => Navigator.pushNamed(context, '/mainfirst'),
                 child: Text(
-                  'Go up stairs.',
+                  'Go back to stairs.',
                   style: TextStyle(
                     fontFamily: 'RockSalt',
                     color: Colors.white,
@@ -58,9 +60,9 @@ class MainHallFirstFloor extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainfirstleft'),
+                onPressed: () => Navigator.pushNamed(context, '/kitchen'),
                 child: Text(
-                  'Go to the left side of the Main Hall',
+                  'Go through first door on western wall.',
                   style: TextStyle(
                     fontFamily: 'RockSalt',
                     color: Colors.white,
