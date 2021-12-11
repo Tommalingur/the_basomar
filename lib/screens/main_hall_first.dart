@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 // The Main Hall first floor screen.
-// TODO: Create buttons to go to the right side of the Main Hall.
 // TODO: Create items to interact with?
 // TODO: Find and change the background picture.
 
-// Changed the background picture. Probably not a final version.
-// Added a button to navigate to the left side of the Main Hall.
+// Added a button to navigate to the right side of the Main Hall.
 
 class MainHallFirstFloor extends StatelessWidget {
   @override
@@ -36,7 +34,7 @@ class MainHallFirstFloor extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomCenter,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
@@ -61,6 +59,24 @@ class MainHallFirstFloor extends StatelessWidget {
                 onPressed: () => Navigator.pushNamed(context, '/mainfirstleft'),
                 child: Text(
                   'Go to the left side of the Main Hall',
+                  style: TextStyle(
+                    fontFamily: 'RockSalt',
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.black,
+                ),
+                onPressed: () =>
+                    Navigator.pushNamed(context, '/mainfirstright'),
+                child: Text(
+                  'Go to the right side of the Main Hall',
                   style: TextStyle(
                     fontFamily: 'RockSalt',
                     color: Colors.white,

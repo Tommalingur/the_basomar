@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-// The left side of The Main Hall first floor.
+// The right side of the main hall second floor.
 
-// TODO: Maybe create some things to interact with.
-// TODO: Add story text.
+// Added a background picture for the right side of the Main Hall second floor. Probably not a final version.
+// Added a button to go back to top of stairs.
+// Added a button to go through the first door.
 
-// Added a button to enter the second door on the western wall.
-// Added a button to enter the door on northern wall.
-
-class MainHallFirstLeft extends StatelessWidget {
+class MainHallSecondRight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +14,7 @@ class MainHallFirstLeft extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_first_left.jpg'),
+            image: AssetImage('images/main_second_right.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -41,9 +39,9 @@ class MainHallFirstLeft extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainfirst'),
+                onPressed: () => Navigator.pushNamed(context, '/mainsecond'),
                 child: Text(
-                  'Go back to stairs.',
+                  'Go back to top of stairs.',
                   style: TextStyle(
                     fontFamily: 'RockSalt',
                     color: Colors.white,
@@ -58,9 +56,9 @@ class MainHallFirstLeft extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/kitchen'),
+                onPressed: () => Navigator.pushNamed(context, '/librarysecond'),
                 child: Text(
-                  'Go through first door on western wall.',
+                  'To through first door.',
                   style: TextStyle(
                     fontFamily: 'RockSalt',
                     color: Colors.white,
@@ -75,26 +73,9 @@ class MainHallFirstLeft extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/bathroom'),
+                onPressed: () => Navigator.pushNamed(context, '/gallery'),
                 child: Text(
-                  'Go through second door on western wall.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                ),
-                onPressed: () => Navigator.pushNamed(context, '/dining'),
-                child: Text(
-                  'Go through door on northern wall.',
+                  'To through second door.',
                   style: TextStyle(
                     fontFamily: 'RockSalt',
                     color: Colors.white,

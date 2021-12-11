@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-// The left side of The Main Hall first floor.
+// The right side of The Main Hall first floor.
 
 // TODO: Maybe create some things to interact with.
 // TODO: Add story text.
 
-// Added a button to enter the second door on the western wall.
-// Added a button to enter the door on northern wall.
+// Created right side of the Main Hall first floor.
+// Added buttons to go through all the doors.
 
-class MainHallFirstLeft extends StatelessWidget {
+class MainHallFirstRight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class MainHallFirstLeft extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_first_left.jpg'),
+            image: AssetImage('images/main_first_right.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -53,14 +53,14 @@ class MainHallFirstLeft extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomRight,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/kitchen'),
+                onPressed: () => Navigator.pushNamed(context, '/reading'),
                 child: Text(
-                  'Go through first door on western wall.',
+                  'Go through first door on eastern wall.',
                   style: TextStyle(
                     fontFamily: 'RockSalt',
                     color: Colors.white,
@@ -70,14 +70,14 @@ class MainHallFirstLeft extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomRight,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/bathroom'),
+                onPressed: () => Navigator.pushNamed(context, '/libraryfirst'),
                 child: Text(
-                  'Go through second door on western wall.',
+                  'Go through second door on eastern wall.',
                   style: TextStyle(
                     fontFamily: 'RockSalt',
                     color: Colors.white,
@@ -87,7 +87,7 @@ class MainHallFirstLeft extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomRight,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,

@@ -1,4 +1,12 @@
 export 'splash_screen.dart';
 export 'garden.dart';
 export 'main_hall_first.dart';
+export 'main_first_right.dart';
+export 'main_first_left.dart';
 export 'main_hall_second.dart';
+export 'main_second_right.dart';
+export 'bathroom.dart';
+export 'dining_hall.dart';
+export 'reading_lounge.dart';
+export 'library_first.dart';
+export 'library_second.dart';
