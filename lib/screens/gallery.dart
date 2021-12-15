@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
 
 // The Gallery.
 
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Added a photo to the gallery.
-// Added a button to go back to the main hall.
+// Replaced Elevated button with route button widget from the newly created route_button.dart
 
 class Gallery extends StatelessWidget {
   @override
@@ -16,7 +16,7 @@ class Gallery extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/gallery.jpg'),
+            image: AssetImage('assets/images/gallery.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -28,7 +28,7 @@ class Gallery extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -37,20 +37,14 @@ class Gallery extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go back to the balcony',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, '/mainsecondright'),
-                child: Text(
-                  'Back to the Main Hall.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
           ],

@@ -1,10 +1,10 @@
+import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
 
 // The right side of the main hall second floor.
 
-// Added a background picture for the right side of the Main Hall second floor. Probably not a final version.
-// Added a button to go back to top of stairs.
-// Added a button to go through the first door.
+// Replaced Elevated button with route button widget from the newly created route_button.dart
 
 class MainHallSecondRight extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class MainHallSecondRight extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_second_right.jpg'),
+            image: AssetImage('assets/images/main_second_right.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -26,7 +26,7 @@ class MainHallSecondRight extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -35,53 +35,43 @@ class MainHallSecondRight extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go back to the top of the stairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainsecond'),
-                child: Text(
-                  'Go back to top of stairs.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallSecondStairs()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through first door',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/librarysecond'),
-                child: Text(
-                  'To through first door.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LibrarySecond()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through second door',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/gallery'),
-                child: Text(
-                  'To through second door.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Gallery()));
+                },
               ),
             ),
           ],

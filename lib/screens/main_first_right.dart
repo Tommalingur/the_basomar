@@ -1,12 +1,13 @@
+import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
 
 // The right side of The Main Hall first floor.
 
 // TODO: Maybe create some things to interact with.
 // TODO: Add story text.
 
-// Created right side of the Main Hall first floor.
-// Added buttons to go through all the doors.
+// Replaced Elevated button with route button widget from the newly created route_button.dart
 
 class MainHallFirstRight extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class MainHallFirstRight extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_first_right.jpg'),
+            image: AssetImage('assets/images/main_first_right.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -28,7 +29,7 @@ class MainHallFirstRight extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -37,70 +38,56 @@ class MainHallFirstRight extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go back to stairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainfirst'),
-                child: Text(
-                  'Go back to stairs.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallFirstFloor()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through the first door on the eastern wall',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/reading'),
-                child: Text(
-                  'Go through first door on eastern wall.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ReadingLounge()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through the second door on the eastern wall',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/libraryfirst'),
-                child: Text(
-                  'Go through second door on eastern wall.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LibraryFirst()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through the door on the northern wall',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/dining'),
-                child: Text(
-                  'Go through door on northern wall.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DiningHall()));
+                },
               ),
             ),
           ],

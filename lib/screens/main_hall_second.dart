@@ -1,12 +1,13 @@
+import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
 
 // The Main Hall second floor screen.
 // TODO: Create buttons to enter right and left side of the second floor Main Hall.
 // TODO: Add a button to interact with double door.
 // TODO: Make this door closed. Add a puzzle or something to open.
 
-// Added a background picture for the Main Hall second floor. Probably not a final version.
-// Added a button to go back downstairs.
+// Replaced Elevated button with route button widget from the newly created route_button.dart
 
 class MainHallSecondStairs extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class MainHallSecondStairs extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_second_stairs.jpg'),
+            image: AssetImage('assets/images/main_second_stairs.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -28,7 +29,7 @@ class MainHallSecondStairs extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -37,55 +38,47 @@ class MainHallSecondStairs extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go back downstairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainfirst'),
-                child: Text(
-                  'Go down stairs.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallFirstFloor()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go to the right side of the balcony',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, '/mainsecondright'),
-                child: Text(
-                  'Go to right side balcony.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallSecondRight()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go to the left side of the balcony',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, '/mainsecondleft'),
-                child: Text(
-                  'Go to left side balcony.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallSecondLeft()));
+                },
               ),
             ),
             Align(
@@ -94,15 +87,21 @@ class MainHallSecondStairs extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/masteroffice'),
-                child: Text(
-                  'Go through double door.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
+                onPressed: () => showDialog(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    title: Text('Locked Door'),
+                    content: Text(
+                        'There is a large door here, \nit is locked and has a strange frame and a feather pen on a chain attached to it. \nMaybe I can write something here'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'Leave'),
+                        child: Text('Leave'),
+                      )
+                    ],
                   ),
                 ),
+                child: Text('Inspect door'),
               ),
             ),
           ],

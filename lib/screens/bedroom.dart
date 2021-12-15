@@ -16,7 +16,7 @@ class Bedroom extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/bedroom.jpg'),
+            image: AssetImage('assets/images/bedroom.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -28,7 +28,7 @@ class Bedroom extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -46,7 +46,7 @@ class Bedroom extends StatelessWidget {
                 child: Text(
                   'Back to the Main Hall.',
                   style: TextStyle(
-                    fontFamily: 'RockSalt',
+                    fontFamily: 'Padauk',
                     color: Colors.white,
                     fontSize: 20.0,
                   ),

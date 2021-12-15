@@ -1,13 +1,15 @@
+import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
 
 // The reading lounge.
 
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Added the reading lounge. Along with  a button to navigate back to the main hall. Also added a picture.
+// Replaced Elevated button with route button widget from the newly created route_button.dart
 
-class Reading_Lounge extends StatelessWidget {
+class ReadingLounge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +17,7 @@ class Reading_Lounge extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/reading_room.jpg'),
+            image: AssetImage('assets/images/reading_room.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -27,7 +29,7 @@ class Reading_Lounge extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -36,20 +38,14 @@ class Reading_Lounge extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Back to Main Hall',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, '/mainfirstright'),
-                child: Text(
-                  'Back to the Main Hall.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
           ],

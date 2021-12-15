@@ -1,10 +1,12 @@
+import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
 
 // The Main Hall first floor screen.
 // TODO: Create items to interact with?
 // TODO: Find and change the background picture.
 
-// Added a button to navigate to the right side of the Main Hall.
+// Replaced Elevated buttons with route button widget from the newly created route_button.dart
 
 class MainHallFirstFloor extends StatelessWidget {
   @override
@@ -14,7 +16,7 @@ class MainHallFirstFloor extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_hall_stairs.jpg'),
+            image: AssetImage('assets/images/main_hall_stairs.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -22,67 +24,60 @@ class MainHallFirstFloor extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            Container(
-              child: Text(
-                'Here there will be a story text.',
-                style: TextStyle(
-                  fontFamily: 'RockSalt',
-                  backgroundColor: Colors.grey,
-                  color: Colors.black,
-                  fontSize: 20.0,
-                ),
-              ),
+            SimpleDialog(
+              title: Text('Main Hall Stairs'),
+              children: [
+                Text('This here is a box for story text'),
+                SimpleDialogOption(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                )
+              ],
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go up the stairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainsecond'),
-                child: Text(
-                  'Go up stairs.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallSecondStairs()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                ),
-                onPressed: () => Navigator.pushNamed(context, '/mainfirstleft'),
-                child: Text(
+              child: RouteButton(
+                routeText: Text(
                   'Go to the left side of the Main Hall',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallFirstLeft()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, '/mainfirstright'),
-                child: Text(
+              child: RouteButton(
+                routeText: Text(
                   'Go to the right side of the Main Hall',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallFirstRight()));
+                },
               ),
             ),
           ],

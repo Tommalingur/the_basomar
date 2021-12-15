@@ -5,9 +5,6 @@ import 'package:flutter/material.dart';
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Added a photo to the Master Office.
-// Added a button to go back to the main hall.
-
 class MasterOffice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,7 +13,7 @@ class MasterOffice extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/master_office.jpg'),
+            image: AssetImage('assets/images/master_office.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -28,7 +25,7 @@ class MasterOffice extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -45,7 +42,7 @@ class MasterOffice extends StatelessWidget {
                 child: Text(
                   'Back to the Main Hall.',
                   style: TextStyle(
-                    fontFamily: 'RockSalt',
+                    fontFamily: 'Padauk',
                     color: Colors.white,
                     fontSize: 20.0,
                   ),

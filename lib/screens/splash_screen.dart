@@ -1,21 +1,27 @@
+import 'package:besomar/screens/pre_story.dart';
 import 'package:flutter/material.dart';
-import 'screens.dart';
+import 'package:audioplayers/src/audio_cache.dart';
+import 'package:besomar/widgets/widgets.dart';
 
 // The splash screen for the game.
-// TODO: Create a button to start the game.
 // TODO: Change the background picture.
 // TODO: Change the logo picture.
 // TODO: Change the letter style to something that fits better.
 
+// Replaced Elevated button with route button widget from the newly created route_button.dart
+
 class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final player = AudioCache();
+    player.loop('asset/audio/menu.wav');
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/bones.jpg'),
+            image: AssetImage('assets/images/bones.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -33,19 +39,20 @@ class Menu extends StatelessWidget {
                 Text(
                   'THE BESOMAR',
                   style: TextStyle(
-                    fontFamily: 'RockSalt',
+                    fontFamily: 'Padauk',
                     color: Colors.white,
                     fontSize: 35.0,
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, '/garden'),
-                  child: Text('Click here to start'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    textStyle:
-                        TextStyle(fontSize: 20.0, fontFamily: 'RockSalt'),
+                RouteButton(
+                  routeText: Text(
+                    'START',
+                    style: TextStyle(color: Colors.grey, fontSize: 20),
                   ),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => PreStory()));
+                  },
                 ),
               ],
             ),

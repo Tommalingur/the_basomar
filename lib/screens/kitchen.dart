@@ -1,11 +1,13 @@
+import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
 
 // The kitchen.
 
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Added the kitchen. Along with  a button to navigate back to the main hall. Also added a picture.
+// Replaced Elevated button with route button widget from the newly created route_button.dart
 
 class Kitchen extends StatelessWidget {
   @override
@@ -15,7 +17,7 @@ class Kitchen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/kitchen.jpg'),
+            image: AssetImage('assets/images/kitchen.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -27,7 +29,7 @@ class Kitchen extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -36,19 +38,14 @@ class Kitchen extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go back to the Main Hall',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainfirstleft'),
-                child: Text(
-                  'Back to the Main Hall.',
-                  style: TextStyle(
-                    fontFamily: 'RockSalt',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
           ],

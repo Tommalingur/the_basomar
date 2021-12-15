@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 
 // The left side of the main hall second floor.
 
-// Added a background picture for the left side of the Main Hall second floor. Probably not a final version.
-// Added a button to go back to top of stairs.
-// Added a button to go through the first door.
-
 class MainHallSecondLeft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +10,7 @@ class MainHallSecondLeft extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_second_left.jpg'),
+            image: AssetImage('assets/images/main_second_left.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -26,7 +22,7 @@ class MainHallSecondLeft extends StatelessWidget {
               child: Text(
                 'Here there will be a story text.',
                 style: TextStyle(
-                  fontFamily: 'RockSalt',
+                  fontFamily: 'Padauk',
                   backgroundColor: Colors.grey,
                   color: Colors.black,
                   fontSize: 20.0,
@@ -43,7 +39,7 @@ class MainHallSecondLeft extends StatelessWidget {
                 child: Text(
                   'Go back to top of stairs.',
                   style: TextStyle(
-                    fontFamily: 'RockSalt',
+                    fontFamily: 'Padauk',
                     color: Colors.white,
                     fontSize: 20.0,
                   ),
@@ -60,7 +56,7 @@ class MainHallSecondLeft extends StatelessWidget {
                 child: Text(
                   'To through first door.',
                   style: TextStyle(
-                    fontFamily: 'RockSalt',
+                    fontFamily: 'Padauk',
                     color: Colors.white,
                     fontSize: 20.0,
                   ),
@@ -77,7 +73,7 @@ class MainHallSecondLeft extends StatelessWidget {
                 child: Text(
                   'To through second door.',
                   style: TextStyle(
-                    fontFamily: 'RockSalt',
+                    fontFamily: 'Padauk',
                     color: Colors.white,
                     fontSize: 20.0,
                   ),
