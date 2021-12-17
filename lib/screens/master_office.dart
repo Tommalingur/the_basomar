@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
 import 'package:besomar/backend/visited.dart';
 import 'package:provider/provider.dart';
 
 // The Master Office.
 
-// Added a provider for visited.dart.
+// Added has visited child with the storybox class from dialog.dart.
 
 // TODO: Create items to interact with.
 // TODO: Add story text.
@@ -29,17 +30,14 @@ class MasterOffice extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            Container(
-              child: Text(
-                'Here there will be a story text.',
-                style: TextStyle(
-                  fontFamily: 'Padauk',
-                  backgroundColor: Colors.grey,
-                  color: Colors.black,
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'Here there will be a story text',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                  ),
             Align(
               alignment: Alignment.bottomRight,
               child: ElevatedButton(

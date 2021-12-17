@@ -7,8 +7,6 @@ import 'package:besomar/widgets/widgets.dart';
 // TODO: Create a window for the text.
 // TODO: Create a button to enter the mansion
 
-// Replaced Elevated button with route button widget from the newly created route_button.dart
-
 class Garden extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,6 +24,14 @@ class Garden extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Container(
+              child: StoryBox(
+                storyText: Text(
+                  'Here there will be a story text',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                ),
+              ),
+            ),
+            Container(
               child: RouteButton(
                 routeText: Text(
                   'Open front door',
@@ -38,7 +44,7 @@ class Garden extends StatelessWidget {
                           builder: (context) => MainHallFirstFloor()));
                 },
               ),
-            )
+            ),
           ],
         ),
       ),

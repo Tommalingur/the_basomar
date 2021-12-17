@@ -9,7 +9,8 @@ import 'package:provider/provider.dart';
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Added a provider for visited.dart.
+// Added has visited child with the storybox class from dialog.dart.
+// Updated route buttons to return to newly created corridor screens instead of left and right side of Main Hall.
 
 class DiningHall extends StatelessWidget {
   @override
@@ -31,17 +32,14 @@ class DiningHall extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            Container(
-              child: Text(
-                'Here there will be a story text.',
-                style: TextStyle(
-                  fontFamily: 'Padauk',
-                  backgroundColor: Colors.grey,
-                  color: Colors.black,
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'Here there will be a story text',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                  ),
             Align(
               alignment: Alignment.bottomLeft,
               child: RouteButton(
@@ -53,7 +51,7 @@ class DiningHall extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => MainHallFirstLeft()));
+                          builder: (context) => MainHallFirstLeftCorridor()));
                 },
               ),
             ),
@@ -68,7 +66,7 @@ class DiningHall extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => MainHallFirstRight()));
+                          builder: (context) => MainHallFirstRightCorridor()));
                 },
               ),
             ),

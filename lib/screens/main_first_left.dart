@@ -6,7 +6,8 @@ import 'package:besomar/backend/visited.dart';
 
 // The left side of The Main Hall first floor.
 
-// Added a provider for visited.dart.
+// Added has visited child with the storybox class from dialog.dart.
+// Reroutet routebutton to go to newly created corridor instead of bathroom and dining hall.
 
 // TODO: Maybe create some things to interact with.
 // TODO: Add story text.
@@ -23,7 +24,7 @@ class MainHallFirstLeft extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/main_first_left.jpg'),
+            image: AssetImage('assets/images/main_first_stairs_left.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -31,17 +32,14 @@ class MainHallFirstLeft extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            Container(
-              child: Text(
-                'Here there will be a story text.',
-                style: TextStyle(
-                  fontFamily: 'Padauk',
-                  backgroundColor: Colors.grey,
-                  color: Colors.black,
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'Here there will be a story text',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                  ),
             Align(
               alignment: Alignment.bottomRight,
               child: RouteButton(
@@ -58,7 +56,7 @@ class MainHallFirstLeft extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               child: RouteButton(
                 routeText: Text(
-                  'Go through the first door on the western wall',
+                  'Go through the door on the western wall',
                   style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
                 onPressed: () {
@@ -71,25 +69,14 @@ class MainHallFirstLeft extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               child: RouteButton(
                 routeText: Text(
-                  'Go through the second door on the western wall',
+                  'Go further down the corridor',
                   style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Bathroom()));
-                },
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: RouteButton(
-                routeText: Text(
-                  'Go through the door on the northern wall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DiningHall()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallFirstLeftCorridor()));
                 },
               ),
             ),

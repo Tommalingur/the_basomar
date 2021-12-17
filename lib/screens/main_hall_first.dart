@@ -8,7 +8,7 @@ import 'package:besomar/backend/backend.dart';
 // TODO: Create items to interact with?
 // TODO: Find and change the background picture.
 
-// Added a provider for visited.dart.
+// Added has visited child with the storybox class from dialog.dart.
 
 class MainHallFirstFloor extends StatelessWidget {
   @override
@@ -30,18 +30,15 @@ class MainHallFirstFloor extends StatelessWidget {
         constraints: BoxConstraints.expand(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            SimpleDialog(
-              title: Text('Main Hall Stairs'),
-              children: [
-                Text('This here is a box for story text'),
-                SimpleDialogOption(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                )
-              ],
-            ),
+          children: [
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'Here there will be a story text',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                  ),
             Align(
               alignment: Alignment.bottomCenter,
               child: RouteButton(

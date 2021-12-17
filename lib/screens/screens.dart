@@ -17,3 +17,6 @@ export 'gallery.dart';
 export 'master_office.dart';
 export 'bedroom.dart';
 export 'master_bedroom.dart';
+export 'secret_room.dart';
+export 'main_first_right_corridor.dart';
+export 'main_first_left_corridor.dart';

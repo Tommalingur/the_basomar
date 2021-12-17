@@ -6,7 +6,8 @@ import 'package:provider/provider.dart';
 
 // The right side of The Main Hall first floor.
 
-// Added a provider for visited.dart.
+// Added has visited child with the storybox class from dialog.dart.
+// Rerouted routebutton to go to newly created corridor instead of library and dining hall.
 
 // TODO: Maybe create some things to interact with.
 // TODO: Add story text.
@@ -17,13 +18,13 @@ class MainHallFirstRight extends StatelessWidget {
     Visited visited = Provider.of<Visited>(context);
 
     bool hasVisited = visited.hasVisited('MainHallFirstRight');
-    visited.addVisit('MainHallFirstFloor');
+    visited.addVisit('MainHallFirstRight');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/main_first_right.jpg'),
+            image: AssetImage('assets/images/main_first_stairs_right.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -31,17 +32,14 @@ class MainHallFirstRight extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            Container(
-              child: Text(
-                'Here there will be a story text.',
-                style: TextStyle(
-                  fontFamily: 'Padauk',
-                  backgroundColor: Colors.grey,
-                  color: Colors.black,
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'Here there will be a story text',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                  ),
             Align(
               alignment: Alignment.bottomLeft,
               child: RouteButton(
@@ -61,7 +59,7 @@ class MainHallFirstRight extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: RouteButton(
                 routeText: Text(
-                  'Go through the first door on the eastern wall',
+                  'Go through the door on the eastern wall',
                   style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
                 onPressed: () {
@@ -74,25 +72,14 @@ class MainHallFirstRight extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: RouteButton(
                 routeText: Text(
-                  'Go through the second door on the eastern wall',
+                  'Go further down the corridor',
                   style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LibraryFirst()));
-                },
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: RouteButton(
-                routeText: Text(
-                  'Go through the door on the northern wall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DiningHall()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallFirstRightCorridor()));
                 },
               ),
             ),

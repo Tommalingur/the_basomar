@@ -4,26 +4,26 @@ import 'package:besomar/widgets/widgets.dart';
 import 'package:besomar/backend/visited.dart';
 import 'package:provider/provider.dart';
 
-// The library first floor.
+// The left side corridor of the Main Hall.
 
-// TODO: Create items to interact with.
+// Created the left side corridor of the Main Hall.
+
+// TODO: Maybe create some things to interact with.
 // TODO: Add story text.
 
-// Added has visited child with the storybox class from dialog.dart.
-
-class LibraryFirst extends StatelessWidget {
+class MainHallFirstLeftCorridor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Visited visited = Provider.of<Visited>(context);
 
-    bool hasVisited = visited.hasVisited('LibraryFirst');
-    visited.addVisit('LibraryFirst');
+    bool hasVisited = visited.hasVisited('MainHallLeftRightCorridor');
+    visited.addVisit('MainHallLeftRightCorridor');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/library_first.jpg'),
+            image: AssetImage('assets/images/main_first_corridor_left.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -43,27 +43,40 @@ class LibraryFirst extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               child: RouteButton(
                 routeText: Text(
-                  'Back to the Main Hall',
+                  'Go back',
                   style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => MainHallFirstRight()));
+                          builder: (context) => MainHallFirstLeft()));
                 },
               ),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomRight,
               child: RouteButton(
                 routeText: Text(
-                  'Go up stairs',
+                  'Go through the door on the western wall',
                   style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LibrarySecond()));
+                      MaterialPageRoute(builder: (context) => Bathroom()));
+                },
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through the door on the northern wall',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DiningHall()));
                 },
               ),
             ),

@@ -1,36 +1,32 @@
 import 'package:flutter/material.dart';
 
-// Widget file for a story dialog.
+// Created a widget file for story button.
 
-// Created the dialog.dart.
+class StoryBox extends StatelessWidget {
+  Text storyText;
+  StoryBox({this.storyText});
 
-Future<T> showDialog<T>({
-  BuildContext context,
-  WidgetBuilder builder,
-  bool barrierDismissible = false,
-  Color barrierColor = Colors.black54,
-  String barrierLabel,
-  bool useSafeArea = true,
-  bool useRootNavigator = true,
-  RouteSettings routeSettings,
-}) {
-  final CapturedThemes themes = InheritedTheme.capture(
-    from: context,
-    to: Navigator.of(
-      context,
-      rootNavigator: useRootNavigator,
-    ).context,
-  );
-
-  return Navigator.of(context, rootNavigator: useRootNavigator)
-      .push<T>(DialogRoute<T>(
-    context: context,
-    builder: builder,
-    barrierColor: barrierColor,
-    barrierDismissible: barrierDismissible,
-    barrierLabel: barrierLabel,
-    useSafeArea: useSafeArea,
-    settings: routeSettings,
-    themes: themes,
-  ));
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.all(20.0),
+          child: storyText,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.grey,
+              width: 1.0,
+              style: BorderStyle.solid,
+            ),
+            color: Colors.black,
+          ),
+        ),
+        Visibility(
+            child: TextButton(
+          onPressed: () => StoryBox(),
+        ))
+      ],
+    );
+  }
 }

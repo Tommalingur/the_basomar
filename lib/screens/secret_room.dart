@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Created the secret room.
+// Added has visited child with the storybox class from dialog.dart.
 
 class SecretRoom extends StatelessWidget {
   @override
@@ -32,17 +32,14 @@ class SecretRoom extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            Container(
-              child: Text(
-                'Here there will be a story text.',
-                style: TextStyle(
-                  fontFamily: 'Padauk',
-                  backgroundColor: Colors.grey,
-                  color: Colors.black,
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'Here there will be a story text',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                  ),
             Align(
               alignment: Alignment.bottomLeft,
               child: RouteButton(
