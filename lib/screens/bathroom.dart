@@ -1,17 +1,22 @@
-import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
+import 'package:besomar/backend/visited.dart';
+import 'package:provider/provider.dart';
 
 // The bathroom.
 
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Replaced Elevated button with route button widget from the newly created route_button.dart
+// Added a provider for visited.dart.
 
 class Bathroom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Visited visited = Provider.of<Visited>(context);
+
+    bool hasVisited = visited.hasVisited('Bathroom');
+    visited.addVisit('Bathroom');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(

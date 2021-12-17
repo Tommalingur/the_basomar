@@ -1,17 +1,23 @@
 import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
+import 'package:besomar/backend/visited.dart';
+import 'package:provider/provider.dart';
 
 // The library first floor.
 
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Replaced Elevated button with route button widget from the newly created route_button.dart
+// Added a provider for visited.dart.
 
 class LibraryFirst extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Visited visited = Provider.of<Visited>(context);
+
+    bool hasVisited = visited.hasVisited('LibraryFirst');
+    visited.addVisit('LibraryFirst');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(

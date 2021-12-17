@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 // Created a widget file for route button.
-//
 
 class RouteButton extends StatelessWidget {
   Function onPressed;

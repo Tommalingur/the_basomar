@@ -1,10 +1,20 @@
+import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
+import 'package:besomar/backend/visited.dart';
+import 'package:provider/provider.dart';
 
 // The left side of the main hall second floor.
+
+// Added a provider for visited.dart.
 
 class MainHallSecondLeft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Visited visited = Provider.of<Visited>(context);
+
+    bool hasVisited = visited.hasVisited('MainHallSecondLeft');
+    visited.addVisit('MainHallSecondLeft');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
@@ -31,53 +41,43 @@ class MainHallSecondLeft extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go back to the top of the stairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/mainsecond'),
-                child: Text(
-                  'Go back to top of stairs.',
-                  style: TextStyle(
-                    fontFamily: 'Padauk',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallSecondStairs()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through first door',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/bedroom'),
-                child: Text(
-                  'To through first door.',
-                  style: TextStyle(
-                    fontFamily: 'Padauk',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Bedroom()));
+                },
               ),
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through second door',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () => Navigator.pushNamed(context, '/masterbedroom'),
-                child: Text(
-                  'To through second door.',
-                  style: TextStyle(
-                    fontFamily: 'Padauk',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MasterBedroom()));
+                },
               ),
             ),
           ],

@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:besomar/widgets/widgets.dart';
+import 'package:besomar/backend/visited.dart';
+import 'package:provider/provider.dart';
 
 // The Bedroom.
 
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Added a photo to the Bedroom.
-// Added a button to go back to the main hall.
+// Added a provider for visited.dart.
 
 class Bedroom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Visited visited = Provider.of<Visited>(context);
+
+    bool hasVisited = visited.hasVisited('Bedroom');
+    visited.addVisit('Bedroom');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
@@ -37,20 +43,14 @@ class Bedroom extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+              child: RouteButton(
+                routeText: Text(
+                  'Go back to the top of the stairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, '/mainsecondleft'),
-                child: Text(
-                  'Back to the Main Hall.',
-                  style: TextStyle(
-                    fontFamily: 'Padauk',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
           ],

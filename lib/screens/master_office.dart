@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:besomar/backend/visited.dart';
+import 'package:provider/provider.dart';
 
 // The Master Office.
+
+// Added a provider for visited.dart.
 
 // TODO: Create items to interact with.
 // TODO: Add story text.
@@ -8,6 +12,10 @@ import 'package:flutter/material.dart';
 class MasterOffice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Visited visited = Provider.of<Visited>(context);
+
+    bool hasVisited = visited.hasVisited('MasterOffice');
+    visited.addVisit('MasterOffice');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(

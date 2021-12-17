@@ -1,8 +1,12 @@
 import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
+import 'package:provider/provider.dart';
+import 'package:besomar/backend/visited.dart';
 
 // The left side of The Main Hall first floor.
+
+// Added a provider for visited.dart.
 
 // TODO: Maybe create some things to interact with.
 // TODO: Add story text.
@@ -10,6 +14,10 @@ import 'package:besomar/widgets/widgets.dart';
 class MainHallFirstLeft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Visited visited = Provider.of<Visited>(context);
+
+    bool hasVisited = visited.hasVisited('MainHallFirstLeft');
+    visited.addVisit('MainHallFirstLeft');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
