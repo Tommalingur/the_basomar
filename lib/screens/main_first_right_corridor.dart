@@ -1,4 +1,5 @@
 import 'package:besomar/screens/screens.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
 import 'package:besomar/backend/visited.dart';
@@ -6,10 +7,7 @@ import 'package:provider/provider.dart';
 
 // The right side corridor of the Main Hall.
 
-// Created the right side corridor of the Main Hall.
-
 // TODO: Maybe create some things to interact with.
-// TODO: Add story text.
 
 class MainHallFirstRightCorridor extends StatelessWidget {
   @override
@@ -31,26 +29,16 @@ class MainHallFirstRightCorridor extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            hasVisited
-                ? Container()
-                : StoryBox(
-                    storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
-                    ),
-                  ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.topCenter,
               child: RouteButton(
                 routeText: Text(
-                  'Go back',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  'Go through the door on the northern wall',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MainHallFirstRight()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DiningHall()));
                 },
               ),
             ),
@@ -59,7 +47,7 @@ class MainHallFirstRightCorridor extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Go through the door on the eastern wall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(context,
@@ -67,16 +55,30 @@ class MainHallFirstRightCorridor extends StatelessWidget {
                 },
               ),
             ),
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'There are two more doors here and a bookshelf on the left.'
+                      '\nYou can‘t help but wonder.'
+                      '\n„Why does a fellow college professor want to meet my dad here?“'
+                      '\n„What mistakes could they possibly have made that can‘t be talked about in a coffe shop?“',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
+                    ),
+                  ),
             Align(
-              alignment: Alignment.bottomRight,
+              alignment: Alignment.bottomLeft,
               child: RouteButton(
                 routeText: Text(
-                  'Go through the door on the northern wall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  'Go back',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DiningHall()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallFirstRight()));
                 },
               ),
             ),

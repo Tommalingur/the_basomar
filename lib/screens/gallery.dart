@@ -6,9 +6,6 @@ import 'package:provider/provider.dart';
 // The Gallery.
 
 // TODO: Create items to interact with.
-// TODO: Add story text.
-
-// Added has visited child with the storybox class from dialog.dart.
 
 class Gallery extends StatelessWidget {
   @override

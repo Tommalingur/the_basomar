@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
 import 'package:besomar/backend/visited.dart';
@@ -6,9 +7,6 @@ import 'package:provider/provider.dart';
 // The bathroom.
 
 // TODO: Create items to interact with.
-// TODO: Add story text.
-
-// Added has visited child with the storybox class from dialog.dart.
 
 class Bathroom extends StatelessWidget {
   @override
@@ -34,16 +32,19 @@ class Bathroom extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                      'It’s a bathroom.'
+                      '\nThe smell in here is awful.'
+                      '\n“I guess the plumbing has seen better days.”',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomCenter,
               child: RouteButton(
                 routeText: Text(
                   'Go back to the Main Hall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.pop(context);

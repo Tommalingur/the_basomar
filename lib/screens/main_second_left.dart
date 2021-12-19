@@ -6,8 +6,6 @@ import 'package:provider/provider.dart';
 
 // The left side of the main hall second floor.
 
-// Added has visited child with the storybox class from dialog.dart.
-
 class MainHallSecondLeft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

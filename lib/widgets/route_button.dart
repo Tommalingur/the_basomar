@@ -11,12 +11,13 @@ class RouteButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       child: Container(
+        padding: EdgeInsets.all(5.0),
         child: routeText,
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           border: Border.all(
             color: Colors.grey,
-            width: 1.0,
+            width: 2.0,
             style: BorderStyle.solid,
           ),
           color: Colors.black,

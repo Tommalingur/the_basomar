@@ -7,9 +7,6 @@ import 'package:provider/provider.dart';
 // The library second floor.
 
 // TODO: Create items to interact with.
-// TODO: Add story text.
-
-// Added has visited child with the storybox class from dialog.dart.
 
 class LibrarySecond extends StatelessWidget {
   @override
@@ -29,14 +26,32 @@ class LibrarySecond extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            Align(
+              alignment: Alignment.topCenter,
+              child: RouteButton(
+                routeText: Text(
+                  'Go down the stairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LibraryFirst(),
+                    ),
+                  );
+                },
+              ),
+            ),
             hasVisited
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                      'The second floor of the library.'
+                      '\n“I wonder if anyone has actually read all those books?”',
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),
             Align(
@@ -44,26 +59,13 @@ class LibrarySecond extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Back to the balcony',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => MainHallSecondRight()));
-                },
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: RouteButton(
-                routeText: Text(
-                  'Go down the stairs',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LibraryFirst()));
                 },
               ),
             ),

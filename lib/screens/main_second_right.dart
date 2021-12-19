@@ -1,12 +1,11 @@
 import 'package:besomar/screens/screens.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
 import 'package:besomar/backend/visited.dart';
 import 'package:provider/provider.dart';
 
 // The right side of the main hall second floor.
-
-// Added has visited child with the storybox class from dialog.dart.
 
 class MainHallSecondRight extends StatelessWidget {
   @override
@@ -26,37 +25,14 @@ class MainHallSecondRight extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            hasVisited
-                ? Container()
-                : StoryBox(
-                    storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
-                    ),
-                  ),
             Align(
-              alignment: Alignment.bottomLeft,
-              child: RouteButton(
-                routeText: Text(
-                  'Go back to the top of the stairs',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MainHallSecondStairs()));
-                },
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.topLeft,
               child: RouteButton(
                 routeText: Text(
                   'Go through first door',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(context,
@@ -65,15 +41,41 @@ class MainHallSecondRight extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.topCenter,
               child: RouteButton(
                 routeText: Text(
                   'Go through second door',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Gallery()));
+                },
+              ),
+            ),
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'The right side of the balcony has two doors.'
+                      '\n“This place gives me the creeps.”'
+                      '\n“There is no sign of anyone but I can’t shake the feeling that I’m not alone”',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
+                    ),
+                  ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: RouteButton(
+                routeText: Text(
+                  'Go back to the top of the stairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallSecondStairs()));
                 },
               ),
             ),

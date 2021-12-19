@@ -1,4 +1,4 @@
-import 'package:besomar/screens/screens.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
 import 'package:besomar/backend/visited.dart';
@@ -7,9 +7,6 @@ import 'package:provider/provider.dart';
 // The kitchen.
 
 // TODO: Create items to interact with.
-// TODO: Add story text.
-
-// Added has visited child with the storybox class from dialog.dart.
 
 class Kitchen extends StatelessWidget {
   @override
@@ -35,16 +32,19 @@ class Kitchen extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                      'This must be one of the largest kitchen you have ever seen.'
+                      '\n“There must have been half a dozen staff working here.”'
+                      '\n“That small house outside must be the servants’ quarters.”',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomRight,
               child: RouteButton(
                 routeText: Text(
-                  'Go back to the Main Hall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  'Back to the Main Hall',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.pop(context);

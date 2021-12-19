@@ -7,10 +7,6 @@ import 'package:provider/provider.dart';
 // The dining hall.
 
 // TODO: Create items to interact with.
-// TODO: Add story text.
-
-// Added has visited child with the storybox class from dialog.dart.
-// Updated route buttons to return to newly created corridor screens instead of left and right side of Main Hall.
 
 class DiningHall extends StatelessWidget {
   @override
@@ -36,8 +32,13 @@ class DiningHall extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                      'You are standing in a huge dining hall.'
+                      '\nThere are pictures on the wall of a man and a woman.'
+                      '\n„It probably seated about twenty people in its heyday. “'
+                      '\nThere are two doors. \nThe one you came in and on identical on the other side of the room.'
+                      '\nIt must lead to the other side of the main hall.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),
             Align(
@@ -45,7 +46,7 @@ class DiningHall extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Go back to the Main Hall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -60,7 +61,7 @@ class DiningHall extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Go back to the Main Hall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(

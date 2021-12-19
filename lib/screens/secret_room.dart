@@ -9,8 +9,6 @@ import 'package:provider/provider.dart';
 // TODO: Create items to interact with.
 // TODO: Add story text.
 
-// Added has visited child with the storybox class from dialog.dart.
-
 class SecretRoom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

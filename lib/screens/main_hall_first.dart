@@ -8,8 +8,6 @@ import 'package:besomar/backend/backend.dart';
 // TODO: Create items to interact with?
 // TODO: Find and change the background picture.
 
-// Added has visited child with the storybox class from dialog.dart.
-
 class MainHallFirstFloor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,8 +33,13 @@ class MainHallFirstFloor extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                      'You open the heavy front door and the air that greets you is musk and damp.'
+                      '\nYou stand in a Main Hall of the manor.'
+                      '\n“This is an amazing house. Or used to be at least."'
+                      '\n"I wonder why my father’s family left it vacant for so long”.'
+                      '\n"Now where sould I begin my search?"',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),
             Align(
@@ -44,7 +47,7 @@ class MainHallFirstFloor extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Go up the stairs',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -59,7 +62,7 @@ class MainHallFirstFloor extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Go to the left side of the Main Hall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -74,7 +77,7 @@ class MainHallFirstFloor extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Go to the right side of the Main Hall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(

@@ -5,10 +5,7 @@ import 'package:provider/provider.dart';
 
 // The Master Office.
 
-// Added has visited child with the storybox class from dialog.dart.
-
 // TODO: Create items to interact with.
-// TODO: Add story text.
 
 class MasterOffice extends StatelessWidget {
   @override

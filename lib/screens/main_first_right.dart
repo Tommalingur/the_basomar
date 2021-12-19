@@ -6,11 +6,7 @@ import 'package:provider/provider.dart';
 
 // The right side of The Main Hall first floor.
 
-// Added has visited child with the storybox class from dialog.dart.
-// Rerouted routebutton to go to newly created corridor instead of library and dining hall.
-
 // TODO: Maybe create some things to interact with.
-// TODO: Add story text.
 
 class MainHallFirstRight extends StatelessWidget {
   @override
@@ -32,12 +28,49 @@ class MainHallFirstRight extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
+            Align(
+              alignment: Alignment.topCenter,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through the door on the eastern wall',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReadingLounge(),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: RouteButton(
+                routeText: Text(
+                  'Go further down the corridor',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MainHallFirstRightCorridor(),
+                    ),
+                  );
+                },
+              ),
+            ),
             hasVisited
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                      'You turn to the right and find a door right in front of you.'
+                      '\nThere are also two more doors further down the corridor.'
+                      '\n„Why do we live in our crappy apartment in London when the family owns this place?“',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),
             Align(
@@ -45,41 +78,13 @@ class MainHallFirstRight extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Go back to stairs',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => MainHallFirstFloor()));
-                },
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: RouteButton(
-                routeText: Text(
-                  'Go through the door on the eastern wall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ReadingLounge()));
-                },
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: RouteButton(
-                routeText: Text(
-                  'Go further down the corridor',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MainHallFirstRightCorridor()));
                 },
               ),
             ),

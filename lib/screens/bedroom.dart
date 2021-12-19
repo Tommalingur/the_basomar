@@ -6,9 +6,6 @@ import 'package:provider/provider.dart';
 // The Bedroom.
 
 // TODO: Create items to interact with.
-// TODO: Add story text.
-
-// Added has visited child with the storybox class from dialog.dart.
 
 class Bedroom extends StatelessWidget {
   @override

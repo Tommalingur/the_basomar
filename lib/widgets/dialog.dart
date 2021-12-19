@@ -16,16 +16,12 @@ class StoryBox extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.grey,
-              width: 1.0,
+              width: 2.0,
               style: BorderStyle.solid,
             ),
             color: Colors.black,
           ),
         ),
-        Visibility(
-            child: TextButton(
-          onPressed: () => StoryBox(),
-        ))
       ],
     );
   }

@@ -6,9 +6,6 @@ import 'package:provider/provider.dart';
 // The reading lounge.
 
 // TODO: Create items to interact with.
-// TODO: Add story text.
-
-// Added has visited child with the storybox class from dialog.dart.
 
 class ReadingLounge extends StatelessWidget {
   @override
@@ -34,8 +31,10 @@ class ReadingLounge extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                      'You go through the door and are now standing in a reading lounge.'
+                      '\nThere is a thick layer of dust everywhere witch is a good thing, \nbecause you see footprints in the dust on the floor.'
+                      '\n„Someone has been here recently. Maybe my father is still here?“',
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),
             Align(
@@ -43,7 +42,7 @@ class ReadingLounge extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Back to Main Hall',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.pop(context);
