@@ -25,22 +25,43 @@ class Bedroom extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            Container(
+              alignment: Alignment.topRight,
+              child: InspectButton(
+                itemName: Text(
+                  'Look inside drawers',
+                  style: TextStyle(color: Colors.grey, fontSize: 30.0),
+                ),
+                title: Text(
+                  'Bedroom drawers',
+                  textAlign: TextAlign.center,
+                ),
+                content: Text(
+                  'Mouldy clothes, bedsheets, nothing here except mould and a couple of spiders.'
+                  '\n“I guess it was too much to think there could be something useful here.”',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
             hasVisited
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                      'There is a simple bedroom here.'
+                      '\n„Probably a guest bedroom.“'
+                      '\n„Or maybe my father‘s when was young?“',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),
             Align(
-              alignment: Alignment.bottomRight,
+              alignment: Alignment.bottomCenter,
               child: RouteButton(
                 routeText: Text(
                   'Go back to the top of the stairs',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.pop(context);

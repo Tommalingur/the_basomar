@@ -30,6 +30,19 @@ class MainHallFirstRightCorridor extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Align(
+              alignment: Alignment.topLeft,
+              child: RouteButton(
+                routeText: Text(
+                  'Go through the secret door',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SecretRoom()));
+                },
+              ),
+            ),
+            Align(
               alignment: Alignment.topCenter,
               child: RouteButton(
                 routeText: Text(

@@ -24,37 +24,27 @@ class MainHallSecondLeft extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            hasVisited
-                ? Container()
-                : StoryBox(
-                    storyText: Text(
-                      'Here there will be a story text',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
-                    ),
-                  ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.topCenter,
               child: RouteButton(
                 routeText: Text(
-                  'Go back to the top of the stairs',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  'Go through second door',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MainHallSecondStairs()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MasterBedroom()));
                 },
               ),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.topRight,
               child: RouteButton(
                 routeText: Text(
                   'Go through first door',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(context,
@@ -62,16 +52,29 @@ class MainHallSecondLeft extends StatelessWidget {
                 },
               ),
             ),
+            hasVisited
+                ? Container()
+                : StoryBox(
+                    storyText: Text(
+                      'Two more doors on this balcony.'
+                      '\n„Did my father live here when he was younger?“'
+                      '\n„I have not seen a single picture of him.“',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 30),
+                    ),
+                  ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomCenter,
               child: RouteButton(
                 routeText: Text(
-                  'Go through second door',
-                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                  'Go back to the top of the stairs',
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MasterBedroom()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainHallSecondStairs()));
                 },
               ),
             ),

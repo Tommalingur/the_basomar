@@ -20,3 +20,5 @@ export 'secret_room.dart';
 export 'main_first_right_corridor.dart';
 export 'main_first_left_corridor.dart';
 export 'menu.dart';
+export 'prison.dart';
+export 'dungeon.dart';
