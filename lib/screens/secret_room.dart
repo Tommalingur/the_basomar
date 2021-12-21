@@ -1,4 +1,3 @@
-import 'package:besomar/screens/dungeon.dart';
 import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
@@ -6,8 +5,6 @@ import 'package:besomar/backend/visited.dart';
 import 'package:provider/provider.dart';
 
 // The secret room.
-
-// TODO: Add story text.
 
 class SecretRoom extends StatelessWidget {
   @override
@@ -31,7 +28,7 @@ class SecretRoom extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Align(
-              alignment: Alignment.topCenter,
+              alignment: Alignment.bottomCenter,
               child: RouteButton(
                 routeText: Text(
                   'Go down stairs',
@@ -47,7 +44,8 @@ class SecretRoom extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
+                      'This is not creepy at all.'
+                      'A secret room leading to a creepy staircase to a cellar that looks even older than the house.',
                       style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),
                   ),

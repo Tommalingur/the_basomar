@@ -6,20 +6,20 @@ import 'package:provider/provider.dart';
 
 // The secret room.
 
-class Prison extends StatelessWidget {
+class PrisonSix extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Visited visited = Provider.of<Visited>(context);
 
-    bool hasVisited = visited.hasVisited('Prison');
-    visited.addVisit('Prison');
+    bool hasVisited = visited.hasVisited('PrisonSix');
+    visited.addVisit('PrisonSix');
 
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/prison.jpg'),
+            image: AssetImage('assets/images/prison_six.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -31,12 +31,12 @@ class Prison extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: RouteButton(
                 routeText: Text(
-                  'Hit the crystal with the stone',
+                  'Continue',
                   style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PrisonTwo()));
+                      MaterialPageRoute(builder: (context) => EndingOne()));
                 },
               ),
             ),
@@ -44,16 +44,10 @@ class Prison extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'You stand in a room that used to be a cellar. Now it is some kind of a prison.'
-                      '\nThere are strange, crumbled pillars in the room and a pedestal in the middle.'
-                      '\nOn the pedestal there is a large crystal and at first you don’t notice the bodies.'
-                      '\nYou look down to the floor and a terrifying image lies before you.'
-                      '\nThere are four bodies on the floor. Three of them horribly mangled.'
-                      '\nThe fourth has its throat cut and is holding a bloody knife.'
-                      '\n\n“Did he do this to himself?”'
-                      '\n\nIt’s then that you notice your father. Trapped inside the crystal.'
-                      '\nYou don’t even think, you grab a large stone from one of the pillars and start smashing the crystal.'
-                      '\n\n“HOLD ON DAD, I’M COMING FOR YOU!”',
+                      'Suddenly blood begins to gush out of his nose and mouth.'
+                      '\nYou look on horrified as his skin begins to rip open and he kneels down again.'
+                      '\n\n“Y-you have…. D-d-doomed this world…”'
+                      '\n\nHe mutters before he begins to vomit blood on the floor.',
                       style: TextStyle(color: Colors.grey, fontSize: 30),
                       textAlign: TextAlign.center,
                     ),

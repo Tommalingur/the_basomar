@@ -19,7 +19,7 @@ class StoryBox extends StatelessWidget {
               width: 2.0,
               style: BorderStyle.solid,
             ),
-            color: Colors.black,
+            color: Colors.black.withOpacity(0.9),
           ),
         ),
       ],

@@ -57,7 +57,7 @@ class MainHallSecondLeft extends StatelessWidget {
                 : StoryBox(
                     storyText: Text(
                       'Two more doors on this balcony.'
-                      '\n„Did my father live here when he was younger?“'
+                      '\n\n„Did my father live here when he was younger?“'
                       '\n„I have not seen a single picture of him.“',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.grey, fontSize: 30),

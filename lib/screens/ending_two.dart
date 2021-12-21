@@ -6,20 +6,20 @@ import 'package:provider/provider.dart';
 
 // The secret room.
 
-class Prison extends StatelessWidget {
+class EndingTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Visited visited = Provider.of<Visited>(context);
 
-    bool hasVisited = visited.hasVisited('Prison');
-    visited.addVisit('Prison');
+    bool hasVisited = visited.hasVisited('EndingTwo');
+    visited.addVisit('EndingTwo');
 
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/prison.jpg'),
+            image: AssetImage('assets/images/prison_demon.jpg'),
             fit: BoxFit.fill,
           ),
         ),
@@ -31,12 +31,12 @@ class Prison extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: RouteButton(
                 routeText: Text(
-                  'Hit the crystal with the stone',
+                  'Continue',
                   style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PrisonTwo()));
+                      MaterialPageRoute(builder: (context) => EndingThree()));
                 },
               ),
             ),
@@ -44,16 +44,14 @@ class Prison extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'You stand in a room that used to be a cellar. Now it is some kind of a prison.'
-                      '\nThere are strange, crumbled pillars in the room and a pedestal in the middle.'
-                      '\nOn the pedestal there is a large crystal and at first you don’t notice the bodies.'
-                      '\nYou look down to the floor and a terrifying image lies before you.'
-                      '\nThere are four bodies on the floor. Three of them horribly mangled.'
-                      '\nThe fourth has its throat cut and is holding a bloody knife.'
-                      '\n\n“Did he do this to himself?”'
-                      '\n\nIt’s then that you notice your father. Trapped inside the crystal.'
-                      '\nYou don’t even think, you grab a large stone from one of the pillars and start smashing the crystal.'
-                      '\n\n“HOLD ON DAD, I’M COMING FOR YOU!”',
+                      'Terror washes over you when a huge demonic figure rises from you father’s corpse.'
+                      '\nThis should not be possible. Demons don’t exist.'
+                      '\nYet here one horrifyingly real towers in front of you.'
+                      '\nAs you stand frozen it looks on you and starts to speak.'
+                      '\nIt speaks in a deep yet ear shattering voice, like a thousand needles ripping at your very soul.'
+                      '\n\n“THANK YOU PUNY HUMAN. I HAVE BEEN IMPRISONED BE THESE FOOLS LONG ENOUGH.”'
+                      '\n“YET THESE PITIFUL MORTALS COULD NOT POSSIBLY HAVE KEPT ME HERE FOR MUCH LONGER.”'
+                      '\n“YOU HAVE ONLY SPED UP THE INEVITABLE. BUT I STILL THINK YOUR ACTIONS SHOULD MERIT A REWARD.”',
                       style: TextStyle(color: Colors.grey, fontSize: 30),
                       textAlign: TextAlign.center,
                     ),

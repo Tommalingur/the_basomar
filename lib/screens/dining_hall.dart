@@ -6,8 +6,6 @@ import 'package:provider/provider.dart';
 
 // The dining hall.
 
-// TODO: Create items to interact with.
-
 class DiningHall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,8 +24,49 @@ class DiningHall extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            Container(
+              alignment: Alignment.topLeft,
+              child: InspectButton(
+                itemName: Text(
+                  'Investigate paintings',
+                  style: TextStyle(color: Colors.grey, fontSize: 30.0),
+                ),
+                title: Text(
+                  'Dining hall paintings',
+                  textAlign: TextAlign.center,
+                ),
+                content: Text(
+                  'There are two pictures hanging on the wall in here.'
+                  '\nThe first is of a man much resembling your father.'
+                  '\nUnder the picture is a name: Mirek Kuchár.'
+                  '\nThe second one is of a woman you don’t know.'
+                  '\nUnderneath is her name: Ognyana Kuchár.'
+                  '\n\n“These are probably my grand-grand parents.'
+                  'I have heard the names, but this is the first time I see them”',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.topCenter,
+              child: InspectButton(
+                itemName: Text(
+                  'Look at dining table',
+                  style: TextStyle(color: Colors.grey, fontSize: 30.0),
+                ),
+                title: Text(
+                  'Dining table',
+                  textAlign: TextAlign.center,
+                ),
+                content: Text(
+                  'It’s covered in dust but there are some plates and knife pairs that have been used recently.'
+                  'You count four plates on the table.',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
             hasVisited
                 ? Container()
                 : StoryBox(

@@ -1,13 +1,10 @@
 import 'package:besomar/screens/screens.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
 import 'package:besomar/backend/visited.dart';
 import 'package:provider/provider.dart';
 
 // The left side corridor of the Main Hall.
-
-// TODO: Maybe create some things to interact with.
 
 class MainHallFirstLeftCorridor extends StatelessWidget {
   @override
@@ -27,7 +24,7 @@ class MainHallFirstLeftCorridor extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Align(
               alignment: Alignment.topCenter,
@@ -62,7 +59,7 @@ class MainHallFirstLeftCorridor extends StatelessWidget {
                       'There are two doors here.'
                       '\nhere are footprints everywhere on the floor here.'
                       '\nYou count at least four different prints.'
-                      '\n“Looks like there were more people here than my father and his friend.”',
+                      '\n\n“Looks like there were more people here than my father and his friend.”',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),

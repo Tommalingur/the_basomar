@@ -5,8 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:besomar/backend/backend.dart';
 
 // The Main Hall first floor screen.
-// TODO: Create items to interact with?
-// TODO: Find and change the background picture.
 
 class MainHallFirstFloor extends StatelessWidget {
   @override
@@ -27,7 +25,7 @@ class MainHallFirstFloor extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             hasVisited
                 ? Container()
@@ -35,7 +33,7 @@ class MainHallFirstFloor extends StatelessWidget {
                     storyText: Text(
                       'You open the heavy front door and the air that greets you is musk and damp.'
                       '\nYou stand in a Main Hall of the manor.'
-                      '\n“This is an amazing house. Or used to be at least."'
+                      '\n\n“This is an amazing house. Or used to be at least."'
                       '\n"I wonder why my father’s family left it vacant for so long”.'
                       '\n"Now where sould I begin my search?"',
                       textAlign: TextAlign.center,

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
 
 // The Garden screen.
-// TODO: Change the background picture.
 
 class FrontDoor extends StatelessWidget {
   @override
@@ -20,15 +19,16 @@ class FrontDoor extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
               child: StoryBox(
                 storyText: Text(
                   'The floorboards on the deck creak under your steps as you walk to the front door.'
                   '\nIt has an old, rusted doorknob in the shape of a lion.'
-                  '\nLooks like nobbody has lived here for decades.',
+                  '\nIt looks like nobbody has lived here for decades.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.grey, fontSize: 35),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
               ),
             ),
@@ -36,7 +36,7 @@ class FrontDoor extends StatelessWidget {
               child: RouteButton(
                 routeText: Text(
                   'Open front door',
-                  style: TextStyle(color: Colors.grey, fontSize: 40),
+                  style: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
                 onPressed: () {
                   Navigator.push(

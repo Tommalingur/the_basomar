@@ -5,8 +5,6 @@ import 'package:provider/provider.dart';
 
 // The Gallery.
 
-// TODO: Create items to interact with.
-
 class Gallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -41,7 +39,7 @@ class Gallery extends StatelessWidget {
                 content: Text(
                   'There is a large statue by Alexander Opekushin standing in the corner.'
                   '\nTwo incredibly unsettling sculptures don the showcases in the back of the room.'
-                  '\n“I can’t wait to get out of here, I swear those sculptures are watching me.”',
+                  '\n\n“I can’t wait to get out of here, I swear those sculptures are watching me.”',
                   textAlign: TextAlign.center,
                 ),
               ),

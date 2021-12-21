@@ -1,8 +1,6 @@
-import 'package:besomar/screens/front_door.dart';
-import 'package:besomar/screens/kuchar_manor.dart';
+import 'package:besomar/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
-import 'package:besomar/backend/backend.dart';
 
 // The pre story screen.
 
@@ -37,7 +35,7 @@ class PreStory extends StatelessWidget {
             RouteButton(
               routeText: Text(
                 'CONTINUE',
-                style: TextStyle(color: Colors.grey, fontSize: 50),
+                style: TextStyle(color: Colors.grey, fontSize: 30),
               ),
               onPressed: () {
                 Navigator.push(context,

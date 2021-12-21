@@ -6,8 +6,6 @@ import 'package:provider/provider.dart';
 
 // The secret room.
 
-// TODO: Add story text.
-
 class Dungeon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,7 +25,7 @@ class Dungeon extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Align(
               alignment: Alignment.topCenter,
@@ -46,8 +44,11 @@ class Dungeon extends StatelessWidget {
                 ? Container()
                 : StoryBox(
                     storyText: Text(
-                      'Here there will be a story text',
+                      'You go down the stairs and stand in a long hallway with a door at the end.'
+                      '\nYour heart is pumping, you have gone through the entire mansion without finding your father \nor his cult friends, and now they are about to sacrifice him. \nOr have they already?'
+                      '\nFear suddenly grips you as you walk towards the door at the end of the hall.',
                       style: TextStyle(color: Colors.grey, fontSize: 30),
+                      textAlign: TextAlign.center,
                     ),
                   ),
             Align(

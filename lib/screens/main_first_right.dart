@@ -6,8 +6,6 @@ import 'package:provider/provider.dart';
 
 // The right side of The Main Hall first floor.
 
-// TODO: Maybe create some things to interact with.
-
 class MainHallFirstRight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class MainHallFirstRight extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Align(
               alignment: Alignment.topCenter,
@@ -68,7 +66,7 @@ class MainHallFirstRight extends StatelessWidget {
                     storyText: Text(
                       'You turn to the right and find a door right in front of you.'
                       '\nThere are also two more doors further down the corridor.'
-                      '\n„Why do we live in our crappy apartment in London when the family owns this place?“',
+                      '\n\n„Why do we live in our crappy apartment in London when the family owns this place?“',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),

@@ -5,8 +5,6 @@ import 'package:provider/provider.dart';
 
 // The Bedroom.
 
-// TODO: Create items to interact with.
-
 class Bedroom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

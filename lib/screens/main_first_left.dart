@@ -1,13 +1,10 @@
 import 'package:besomar/screens/screens.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:besomar/backend/visited.dart';
 
 // The left side of The Main Hall first floor.
-
-// TODO: Maybe create some things to interact with.
 
 class MainHallFirstLeft extends StatelessWidget {
   @override
@@ -27,7 +24,7 @@ class MainHallFirstLeft extends StatelessWidget {
         ),
         constraints: BoxConstraints.expand(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Align(
               alignment: Alignment.topCenter,
@@ -62,7 +59,7 @@ class MainHallFirstLeft extends StatelessWidget {
                 : StoryBox(
                     storyText: Text(
                       'There is a door here.'
-                      '\n“What’s up with all the suits of armour around here?”',
+                      '\n\n“What’s up with all the suits of armour around here?”',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.grey, fontSize: 30),
                     ),

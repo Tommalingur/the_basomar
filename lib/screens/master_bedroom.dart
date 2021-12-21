@@ -1,19 +1,22 @@
+import 'package:besomar/backend/player.dart';
 import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
-import 'package:besomar/backend/visited.dart';
+import 'package:besomar/backend/backend.dart';
 import 'package:provider/provider.dart';
 
 // The Master Bedroom.
-
-// TODO: Create items to interact with.
 
 class MasterBedroom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Visited visited = Provider.of<Visited>(context);
+    Player player = Provider.of<Player>(context);
 
     bool hasVisited = visited.hasVisited('MasterBedroom');
     visited.addVisit('MasterBedroom');
+    bool hasItem = player.hasItem('ornamentKey');
+    player.addItem('ornamentKey');
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
@@ -27,31 +30,51 @@ class MasterBedroom extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Container(
-              alignment: Alignment.topCenter,
-              child: InspectButton(
-                itemName: Text(
-                  'A book on the night table',
-                  style: TextStyle(color: Colors.grey, fontSize: 30.0),
-                ),
-                title: Text(
-                  'Old Ledger',
-                  style: TextStyle(color: Colors.grey, fontSize: 35.0),
-                  textAlign: TextAlign.center,
-                ),
-                content: Text(
-                  'There is an old ledger on the night table.'
-                  '\nYou turn a few pages but all it contains are some names and amount of money owed.'
-                  '\n“I think everyone who still owe some money here are long dead.”'
-                  '\n“But what is this?”'
-                  '\nYou turn a few more pages and find an old, ornamented key in between them.'
-                  '\n“I wonder what this opens.”'
-                  '\n You put the key in your pocket.',
-                  style: TextStyle(color: Colors.grey, fontSize: 30.0),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
+            hasItem
+                ? Container(
+                    alignment: Alignment.topCenter,
+                    child: InspectButton(
+                      itemName: Text(
+                        'A book on the night table',
+                        style: TextStyle(color: Colors.grey, fontSize: 30.0),
+                      ),
+                      title: Text(
+                        'Old Ledger',
+                        style: TextStyle(color: Colors.grey, fontSize: 35.0),
+                        textAlign: TextAlign.center,
+                      ),
+                      content: Text(
+                        'There is nothing special about the book and you already have the key.',
+                        style: TextStyle(color: Colors.grey, fontSize: 30.0),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  )
+                : Container(
+                    alignment: Alignment.topCenter,
+                    child: InspectButton(
+                      itemName: Text(
+                        'A book on the night table',
+                        style: TextStyle(color: Colors.grey, fontSize: 30.0),
+                      ),
+                      title: Text(
+                        'Old Ledger',
+                        style: TextStyle(color: Colors.grey, fontSize: 35.0),
+                        textAlign: TextAlign.center,
+                      ),
+                      content: Text(
+                        'There is an old ledger on the night table.'
+                        '\nYou turn a few pages but all it contains are some names and amount of money owed.'
+                        '\n“I think everyone who still owe some money here are long dead.”'
+                        '\n“But what is this?”'
+                        '\nYou turn a few more pages and find an old, ornamented key in between them.'
+                        '\n“I wonder what this opens.”'
+                        '\n You put the key in your pocket.',
+                        style: TextStyle(color: Colors.grey, fontSize: 30.0),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
             Container(
               alignment: Alignment.topRight,
               child: InspectButton(
@@ -66,7 +89,7 @@ class MasterBedroom extends StatelessWidget {
                 ),
                 content: Text(
                   'There is nothing in here except for old mouldy clothes.'
-                  '\n“People seemed in a hurry when they left the place. \nClothes and valuables are still here.”',
+                  '\n\n“People seemed in a hurry when they left the place. \nClothes and valuables are still here.”',
                   style: TextStyle(color: Colors.grey, fontSize: 30.0),
                   textAlign: TextAlign.center,
                 ),
@@ -77,7 +100,7 @@ class MasterBedroom extends StatelessWidget {
                 : StoryBox(
                     storyText: Text(
                       'This must be the master bedroom.'
-                      '\n„I think maybe my grandfather was a little to snobbish for my taste. “'
+                      '\n\n„I think maybe my grandfather was a little to snobbish for my taste. “'
                       '\n„Maybe there are some clues in here. “',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.grey, fontSize: 30),

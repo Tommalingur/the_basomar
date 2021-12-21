@@ -31,4 +31,7 @@ flutter:
     - family: Island
       fonts:
         - asset: assets/fonts/IslandMoments-Regular.ttf
+    - family: Demon
+      fonts:
+        - asset: assets/fonts/demon-Regular.ttf
 

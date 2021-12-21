@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:besomar/widgets/widgets.dart';
 
 // The splash screen for the game.
-// TODO: Change the background picture.
-// TODO: Change the logo picture.
-// TODO: Change the letter style to something that fits better.
 
 class Menu extends StatelessWidget {
   @override
@@ -27,21 +24,14 @@ class Menu extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Image(
-                  image: AssetImage('images/yellow_eyes.png'),
-                ),
-                Text(
-                  'THE BESOMAR',
-                  style: TextStyle(
-                    fontFamily: 'Padauk',
-                    color: Colors.white,
-                    fontSize: 35.0,
-                  ),
+                Image.asset(
+                  'images/title.jpg',
+                  scale: 1.5,
                 ),
                 RouteButton(
                   routeText: Text(
                     'START',
-                    style: TextStyle(color: Colors.grey, fontSize: 20),
+                    style: TextStyle(color: Colors.grey, fontSize: 30),
                   ),
                   onPressed: () {
                     Navigator.push(context,

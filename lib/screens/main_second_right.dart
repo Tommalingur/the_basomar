@@ -58,7 +58,7 @@ class MainHallSecondRight extends StatelessWidget {
                 : StoryBox(
                     storyText: Text(
                       'The right side of the balcony has two doors.'
-                      '\n“This place gives me the creeps.”'
+                      '\n\n“This place gives me the creeps.”'
                       '\n“There is no sign of anyone but I can’t shake the feeling that I’m not alone”',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.grey, fontSize: 30),
